@@ -31,7 +31,7 @@ def check_targets():
                 is_knot = True
             formatted_res = ','.join(['{}:{}'.format(k,v) for k,v in sorted(res.items())])
             is_knot_formatted = 'KNOT' if is_knot else '.   '
-            print(formatted_res)
+            #print(formatted_res)
             with open(outfile, 'a+') as f:
                 f.write('{:<60} {} {}\n'.format(name, is_knot_formatted, formatted_res))
 

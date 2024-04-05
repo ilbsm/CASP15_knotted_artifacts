@@ -1,4 +1,5 @@
 import os
+from tqdm import tqdm
 
 def pdb2xyz(pdb):
     corr_atoms = ["C5'","C4'","C3'","O3'","P","O5'"]
@@ -18,8 +19,10 @@ def pdb2xyz(pdb):
 
 if __name__ == '__main__':
     for folder in ['models', 'targets']:
+        if not os.path.exists('xyz_{}'.format(folder)):
+            os.mkdir('xyz_{}'.format(folder))
         pdbs = sorted(os.listdir('../pdb_{}'.format(folder)))
-        for pdb in pdbs:
+        for pdb in tqdm(pdbs):
             if pdb[0] == '.': continue
             name = pdb.split('.')[:-1]
             name = '.'.join(name)
