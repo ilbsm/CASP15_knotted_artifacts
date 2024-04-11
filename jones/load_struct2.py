@@ -1,27 +1,41 @@
 import numpy as np
-from scipy.spatial import distance
+from scipy.spatial.distance import pdist, squareform
 from collections import defaultdict
 from icecream import ic
 
 # can be optimized
 def get_diagrams(projections):
-    delta = np.zeros((projections.shape[0]-1, projections.shape[1]-1, *projections.shape[2:]))
-    delta[0] = (np.roll(projections[0], -1, axis=0) - projections[0])[:-1]
-    delta[1] = (np.roll(projections[1], -1, axis=0) - projections[1])[:-1]
-    dx = delta[0]
-    dy = delta[1]
+    #segment = np.zeros((projections.shape[0]-1, projections.shape[1]-1, *projections.shape[2:]))
+    #segment[0] = (np.roll(projections[0], -1, axis=0) - projections[0])[:-1]
+    #segment[1] = (np.roll(projections[1], -1, axis=0) - projections[1])[:-1]
+    segments = (np.roll(projections, -1, axis=1) - projections[1])[:,:-1]
+    dx,dy,dz = segments
     Sx = (np.roll(projections[0], -1, axis=0) + projections[0])[:-1]
     Sy = (np.roll(projections[1], -1, axis=0) + projections[1])[:-1]
     # y=ax+b -- equation of line defined by a segment
     a = dy/dx
-    b = (Sy - a*Sx)/2
+    b = (Sy-a*Sx)/2
     _, num_atoms, num_projections = projections.shape
-    x_intersections = np.zeros((num_atoms-1, num_atoms-1, num_projections))
-    y_intersections = np.zeros((num_atoms-1, num_atoms-1, num_projections))
-    crossings_arr = np.zeros((num_atoms-1, num_atoms-1, num_projections))
-    seg1_div = np.zeros((num_atoms-1, num_atoms-1, num_projections))
-    seg2_div = np.zeros((num_atoms-1, num_atoms-1, num_projections))
     # vectorization using scipy.spatial.distance.pdist?
+    for proj_num in range(projections.shape[-1]):
+        x_intersection = -squareform(pdist(b[:,proj_num:proj_num+1]))/squareform(pdist(a[:,proj_num:proj_num+1]))
+        ic(x_intersection.shape)
+        ic(np.equal(x_intersection, x_intersection.T))
+        y_intersection = x_intersection * a[:,proj_num] + b[:,proj_num]
+        ic(np.equal(y_intersection, y_intersection.T)) # <--- that's the problem
+        
+        seg_div_x = (x_intersection-projections[0,:-1,proj_num])/dx[:,proj_num]
+        seg_div_y = (y_intersection-projections[1,:-1,proj_num])/dy[:,proj_num]
+
+        where_cross = np.logical_and(np.logical_and(0<seg_div_x, seg_div_x<1),
+                                     np.logical_and(0<seg_div_y, seg_div_y<1))
+        ic(np.argwhere(where_cross))
+        ee = np.logical_and(where_cross, where_cross.T)
+        ic(np.argwhere(ee))
+        
+#        z_cross = seg_div*dz[:,proj_num] + projections[2,:,proj_num]
+"""        
+        
     for ndx1 in range(num_atoms-1):
         for ndx2 in range(ndx1+2, num_atoms-1):
             x_intersection = -(b[ndx2]-b[ndx1]) / (a[ndx2]-a[ndx1])
@@ -35,11 +49,43 @@ def get_diagrams(projections):
             # checking crossings' signs
             is_overcrossing = get_is_overcrossing(projections, ndx1, ndx2, seg1_div_l, seg2_div_l)
             # signs: 2/-2 overcrossing, 1/-1 undercrossing
-            signs = get_crossing_sign(delta, ndx1, ndx2, is_overcrossing)
+            signs = get_crossing_sign(segment, ndx1, ndx2, is_overcrossing)
             crossings_arr[ndx1,ndx2] = np.where(is_crossings, signs, 0)
     crossings_dict = crossings_arr2dic(crossings_arr, seg1_div, seg2_div)
     gcodes = crossings2gcode(crossings_dict)
     return gcodes
+"""
+def is_intersection_local(projections, ndx1, ndx2, x0, y0):
+    x1_boundary = np.sort(np.stack((projections[0,ndx1], projections[0,ndx1+1]), axis=1),
+                         axis=1)
+    y1_boundary = np.sort(np.stack((projections[1,ndx1], projections[1,ndx1+1]), axis=1),
+                         axis=1)
+    x2_boundary = np.sort(np.stack((projections[0,ndx2], projections[0,ndx2+1]), axis=1),
+                         axis=1)
+    y2_boundary = np.sort(np.stack((projections[1,ndx2], projections[1,ndx2+1]), axis=1),
+                         axis=1)
+    # checking if intersection between lines is between endpoints of segments
+    bool1 = np.greater(x1_boundary[:,1], x0[:])
+    bool2 = np.greater(x0[:], x1_boundary[:,0])
+    bool3 = np.greater(x2_boundary[:,1], x0[:])
+    bool4 = np.greater(x0[:], x2_boundary[:,0])
+    bool5 = np.greater(y1_boundary[:,1], y0[:])
+    bool6 = np.greater(y0[:], y1_boundary[:,0])
+    bool7 = np.greater(y2_boundary[:,1], y0[:])
+    bool8 = np.greater(y0[:], y2_boundary[:,0])
+    is_crossings = np.logical_and(np.logical_and(np.equal(bool1, bool2), np.equal(bool3, bool4)),
+                                  np.logical_and(np.equal(bool5, bool6), np.equal(bool7, bool8)))
+    return is_crossings
+
+def get_is_overcrossing(projections, ndx1, ndx2, seg1_div, seg2_div):
+    z1 = projections[2,ndx1]
+    z2 = projections[2,ndx1+1]
+    z3 = projections[2,ndx2]
+    z4 = projections[2,ndx2+1]
+    z_cross_12 = seg1_div * (z2-z1) + z1
+    z_cross_34 = seg2_div * (z4-z3) + z3
+    is_overcrossing = np.greater(z_cross_34, z_cross_12)
+    return is_overcrossing
 
 def crossings2gcode(crossings):
     gcodes = {}
@@ -73,53 +119,12 @@ def crossings_arr2dic(crossings_arr, seg1_div, seg2_div):
         crossings[i] = sorted(crossings[i])
     return crossings
 
-def get_crossing_sign(delta, ndx1, ndx2, is_overcrossing):
-    cross_product = np.cross(delta[:,ndx1], delta[:,ndx2], axisa=0, axisb=0)
+def get_crossing_sign(segment, ndx1, ndx2, is_overcrossing):
+    cross_product = np.cross(segment[:,ndx1], segment[:,ndx2], axisa=0, axisb=0)
     if np.any(cross_product == 0):
         raise ValueError
     signs = np.where(np.equal(is_overcrossing, cross_product>0), 1+is_overcrossing, -1-is_overcrossing)
     return signs
-
-def where_divided(projections, ndx1, ndx2, x_intersection):
-    x1 = projections[0,ndx1]
-    x2 = projections[0,ndx1+1]
-    x3 = projections[0,ndx2]
-    x4 = projections[0,ndx2+1]
-    seg1_div = (x_intersection-x1)/(x2-x1)
-    seg2_div = (x_intersection-x3)/(x4-x3)
-    return seg1_div, seg2_div
-
-def get_is_overcrossing(projections, ndx1, ndx2, seg1_div, seg2_div):
-    z1 = projections[2,ndx1]
-    z2 = projections[2,ndx1+1]
-    z3 = projections[2,ndx2]
-    z4 = projections[2,ndx2+1]
-    z_cross_12 = seg1_div * (z2-z1) + z1
-    z_cross_34 = seg2_div * (z4-z3) + z3
-    is_overcrossing = np.greater(z_cross_34, z_cross_12)
-    return is_overcrossing
-
-def is_intersection_local(projections, ndx1, ndx2, x0, y0):
-    x1_boundary = np.sort(np.stack((projections[0,ndx1], projections[0,ndx1+1]), axis=1),
-                         axis=1)
-    y1_boundary = np.sort(np.stack((projections[1,ndx1], projections[1,ndx1+1]), axis=1),
-                         axis=1)
-    x2_boundary = np.sort(np.stack((projections[0,ndx2], projections[0,ndx2+1]), axis=1),
-                         axis=1)
-    y2_boundary = np.sort(np.stack((projections[1,ndx2], projections[1,ndx2+1]), axis=1),
-                         axis=1)
-    # checking if intersection between lines is between endpoints of segments
-    bool1 = np.greater(x1_boundary[:,1], x0[:])
-    bool2 = np.greater(x0[:], x1_boundary[:,0])
-    bool3 = np.greater(x2_boundary[:,1], x0[:])
-    bool4 = np.greater(x0[:], x2_boundary[:,0])
-    bool5 = np.greater(y1_boundary[:,1], y0[:])
-    bool6 = np.greater(y0[:], y1_boundary[:,0])
-    bool7 = np.greater(y2_boundary[:,1], y0[:])
-    bool8 = np.greater(y0[:], y2_boundary[:,0])
-    is_crossings = np.logical_and(np.logical_and(np.equal(bool1, bool2), np.equal(bool3, bool4)),
-                                  np.logical_and(np.equal(bool5, bool6), np.equal(bool7, bool8)))
-    return is_crossings
 
 def load_nxyz(infile):
     with open(infile, 'r') as f:
@@ -164,9 +169,10 @@ if __name__ == '__main__':
     #coords, ndxs = load_nxyz('R1117TS416_3.xyz')
     coords, ndxs = load_xyz('31.xyz')
     # possibly chain reduction (like KMT) here
-    num_rotations = 20
-    rotated_coords = rotate_randomly(coords, num_rotations)
-    gcodes = get_diagrams(rotated_coords)
-    for gcode in gcodes:
-        ic(gcodes[gcode])
+    num_rotations = 1
+    #rotated_coords = rotate_randomly(coords, num_rotations)
+    rotated_coords = coords.reshape(*coords.shape,1)
+    get_diagrams(rotated_coords)
+#    for gcode in gcodes:
+#        ic(gcodes[gcode])
 
