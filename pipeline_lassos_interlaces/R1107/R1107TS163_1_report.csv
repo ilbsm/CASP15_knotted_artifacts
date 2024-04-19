@@ -1,0 +1,15 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;L(S);Lasso;"""Loop 1 (2D: 31-54; 3D: 032-055)""";"""IP1> 0: G5, P - 0: G5, C4'"""
+;;;CCCCUGUCAGCCAUUGCACUCCGG;
+;;;(]]]...................);
+;;;"""Single strand 1 (2D: 0-12; 3D: 01-013)""";
+;;;GGGGGCCACAGCA;
+;;;.[[[........(;
+;;;;
+E2;L(S);Lasso;"""Loop 2 (2D: 3-32; 3D: 04-033)""";"""IP1> 0: G55, P - 0: G55, C4'"""
+;;;GGCCACAGCAGAAGCGUUCACGUCGCAGCC;
+;;;[........((((.(((..)))..(((((];
+;;;"""Single strand 2 (2D: 34-68; 3D: 035-069)""";
+;;;CUGUCAGCCAUUGCACUCCGGCUGCGAAUUCUGCU;
+;;;]...................)))))...))))...;
+;;;;

@@ -1,2 +1,3 @@
+pandas
 topoly
 tqdm

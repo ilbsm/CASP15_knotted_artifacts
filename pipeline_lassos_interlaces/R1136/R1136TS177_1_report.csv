@@ -1,0 +1,50 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;L(D);Lasso;"""Loop 1 (2D: 288-303; 3D: 0289-0304)""";"""IP1> 0: A288, B - 0: U305, C4'"""
+;;;UGAGAUUUCGAUCUCA;"""IP2> 0: C306, C4' - 0: G287, B"""
+;;;(..............);
+;;;"""Dinucleotide step 1 (2D: 286-287, 304-305; 3D: 0287-0288, 0305-0306)""";
+;;;GA-UC;
+;;;((-));
+;;;;
+E2;L(D);Lasso;"""Loop 2 (2D: 333-346; 3D: 0334-0347)""";"""IP1> 0: C324, P - 0: C324, C4'"""
+;;;CUGUGUUCGCACAG;"""IP2> 0: C324, C4' - 0: G314, B"""
+;;;(............);
+;;;"""Dinucleotide step 2 (2D: 313-314, 322-323; 3D: 0314-0315, 0323-0324)""";
+;;;GU-GC;
+;;;((-));
+;;;;
+E3;L(D);Lasso;"""Loop 3 (2D: 21-22, 53-79; 3D: 022-023, 054-080)""";"""IP1> 0: A21, B - 0: U81, C4'"""
+;;;CG-CAUACACGGAUGUGCCUCGCCGAACAG;"""IP2> 0: C82, C4' - 0: G20, B"""
+;;;[[-]...((....))....((((((....];
+;;;"""Dinucleotide step 3 (2D: 19-20, 80-81; 3D: 020-021, 081-082)""";
+;;;GA-UC;
+;;;[[-]];
+;;;;
+E4;L(S);Lasso;"""Loop 2 (2D: 333-346; 3D: 0334-0347)""";"""IP1> 0: C324, P - 0: C324, C4'"""
+;;;CUGUGUUCGCACAG;
+;;;(............);
+;;;"""Single strand 1 (2D: 323-326; 3D: 0324-0327)""";
+;;;CUUG;
+;;;)..(;
+;;;;
+E5;L(S);Lasso;"""Loop 3 (2D: 21-22, 53-79; 3D: 022-023, 054-080)""";"""IP1> 0: C82, C4' - 0: U83, P"""
+;;;CG-CAUACACGGAUGUGCCUCGCCGAACAG;
+;;;[[-]...((....))....((((((....];
+;;;"""Single strand 2 (2D: 81-181; 3D: 082-0182)""";
+;;;CUACGGCGAGCUUAAGCGCUGGGGACGCCCAACGCAUCACAAAGACUGAGUGAUGAACCAGAAGUAUGGACUGGUUGCGUUGGUGGAGACGGUCGGGUCCA;
+;;;]..))))))........................................................................)))).))))).........[;
+;;;;
+E6;L(S);Lasso;"""Loop 4 (2D: 182-206; 3D: 0183-0207)""";"""IP1> 0: G178, P - 0: G178, C4'"""
+;;;GUUCGCUGUCGAGUAGAGUGUGGGC;
+;;;[................((.(((.];
+;;;"""Single strand 2 (2D: 81-181; 3D: 082-0182)""";
+;;;CUACGGCGAGCUUAAGCGCUGGGGACGCCCAACGCAUCACAAAGACUGAGUGAUGAACCAGAAGUAUGGACUGGUUGCGUUGGUGGAGACGGUCGGGUCCA;
+;;;]..))))))........................................................................)))).))))).........[;
+;;;;
+E7;L(S);Lasso;"""Loop 4 (2D: 182-206; 3D: 0183-0207)""";"""IP1> 0: C209, P - 0: C209, C4'"""
+;;;GUUCGCUGUCGAGUAGAGUGUGGGC;
+;;;[................((.(((.];
+;;;"""Single strand 3 (2D: 207-249; 3D: 0208-0250)""";
+;;;UCCAUCGACGCCGCUUUAAGGUCCCCAAUCGUGGCGUGUCGGC;
+;;;])))...)){{{.....((((((.....(((........)))[;
+;;;;

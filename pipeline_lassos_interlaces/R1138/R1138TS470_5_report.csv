@@ -1,0 +1,113 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;D&L;Interlace;"""Dinucleotide step 1 (2D: 283-284, 296-297; 3D: 0284-0285, 0297-0298)""";"""IP1> 0: C664, C4' - 0: G665, P"""
+;;;GC-GC;"""IP2> 0: C298, C4' - 0: G284, B"""
+;;;((-));
+;;;"""Loop 1 (2D: 657-668; 3D: 0658-0669)""";
+;;;AUGAUUCGUCAU;
+;;;(..........);
+;;;;
+E2;L(D);Lasso;"""Loop 1 (2D: 657-668; 3D: 0658-0669)""";"""IP1> 0: G284, B - 0: C298, C4'"""
+;;;AUGAUUCGUCAU;"""IP2> 0: C298, C4' - 0: A299, P"""
+;;;(..........);
+;;;"""Dinucleotide step 2 (2D: 282-283, 297-298; 3D: 0283-0284, 0298-0299)""";
+;;;UG-CA;
+;;;((-));
+;;;;
+E3;D(S);Lasso;"""Dinucleotide step 3 (2D: 20-21, 43-44; 3D: 021-022, 044-045)""";"""IP1> 0: G68, C4' - 0: U69, P"""
+;;;CA-UG;
+;;;((-));
+;;;"""Single strand 1 (2D: 66-79; 3D: 067-080)""";
+;;;CGUAUCCUCCGACU;
+;;;)............(;
+;;;;
+E4;D(S);Lasso;"""Dinucleotide step 4 (2D: 80-81, 96-97; 3D: 081-082, 097-098)""";"""IP1> 0: A715, C4' - 0: G716, P"""
+;;;AA-UU;
+;;;((-));
+;;;"""Single strand 2 (2D: 703-719; 3D: 0704-0720)""";
+;;;CGGGUAGAUGGAGAAUU;
+;;;)................;
+;;;;
+E5;D(S);Lasso;"""Dinucleotide step 5 (2D: 81-82, 95-96; 3D: 082-083, 096-097)""";"""IP1> 0: G716, P - 0: G716, C4'"""
+;;;AG-CU;
+;;;((-));
+;;;"""Single strand 2 (2D: 703-719; 3D: 0704-0720)""";
+;;;CGGGUAGAUGGAGAAUU;
+;;;)................;
+;;;;
+E6;D(S);Lasso;"""Dinucleotide step 6 (2D: 135-136, 149-150; 3D: 0136-0137, 0150-0151)""";"""IP1> 0: A356, P - 0: A356, C4'"""
+;;;GU-AC;
+;;;((-));
+;;;"""Single strand 3 (2D: 311-377; 3D: 0312-0378)""";
+;;;AUGCCAGAACUCACGACUGGCAUCUACGGGGAUGGUGCUCUCCCAAUUCUCCAUUUACCGCCGAAUC;
+;;;..................................................................(;
+;;;;
+E7;D(S.);Lasso;"""Dinucleotide step 7 (2D: 378-379, 397-398; 3D: 0379-0380, 0398-0399)""";"""IP1> 0: C439, C4' - 0: C440, P"""
+;;;GA-UC;"""IP2> 0: C440, P - 0: C440, C4'"""
+;;;((-));
+;;;"""Single strand 4 (2D: 433-446; 3D: 0434-0447)""";
+;;;UGCUCCCCAACGCU;
+;;;.............(;
+;;;;
+E8;D(S);Lasso;"""Dinucleotide step 8 (2D: 576-577, 586-587; 3D: 0577-0578, 0587-0588)""";"""IP1> 0: G611, C4' - 0: A612, P"""
+;;;UG-CA;
+;;;((-));
+;;;"""Single strand 5 (2D: 602-628; 3D: 0603-0629)""";
+;;;CCGUUUUCGAGCGGAUGCUGGGCGGUU;
+;;;..........................(;
+;;;;
+E9;D(S);Lasso;"""Dinucleotide step 9 (2D: 628-629, 642-643; 3D: 0629-0630, 0643-0644)""";"""IP1> 0: U602, P - 0: U602, C4'"""
+;;;UG-CA;
+;;;((-));
+;;;"""Single strand 6 (2D: 601-601; 3D: 0602-0602)""";
+;;;U;
+;;;.;
+;;;;
+E10;D(S.);Lasso;"""Dinucleotide step 10 (2D: 630-631, 640-641; 3D: 0631-0632, 0641-0642)""";"""IP1> 0: G123, C4' - 0: C124, P"""
+;;;CC-GG;"""IP2> 0: C124, P - 0: C124, C4'"""
+;;;((-));
+;;;"""Single strand 7 (2D: 98-123; 3D: 099-0124)""";
+;;;AGUGCCUUGUGCCUGCUUCGGCAGGC;
+;;;).........................;
+;;;;
+E11;D(S.);Lasso;"""Dinucleotide step 11 (2D: 631-632, 639-640; 3D: 0632-0633, 0640-0641)""";"""IP1> 0: G123, C4' - 0: C124, P"""
+;;;CU-AG;"""IP2> 0: G123, C4' - 0: C124, P"""
+;;;((-));
+;;;"""Single strand 7 (2D: 98-123; 3D: 099-0124)""";
+;;;AGUGCCUUGUGCCUGCUUCGGCAGGC;
+;;;).........................;
+;;;;
+E12;L(S);Lasso;"""Loop 2 (2D: 136-149; 3D: 0137-0150)""";"""IP1> 0: U14, P - 0: U14, C4'"""
+;;;UGCCUUUCGGGGCA;
+;;;(............);
+;;;"""Single strand 8 (2D: 9-19; 3D: 010-020)""";
+;;;CUAUUCAGAUG;
+;;;..........(;
+;;;;
+E13;L(S);Lasso;"""Loop 2 (2D: 136-149; 3D: 0137-0150)""";"""IP1> 0: C76, P - 0: C76, C4'"""
+;;;UGCCUUUCGGGGCA;
+;;;(............);
+;;;"""Single strand 1 (2D: 66-79; 3D: 067-080)""";
+;;;CGUAUCCUCCGACU;
+;;;)............(;
+;;;;
+E14;L(S.);Lasso;"""Loop 2 (2D: 136-149; 3D: 0137-0150)""";"""IP1> 0: A356, P - 0: A356, C4'"""
+;;;UGCCUUUCGGGGCA;"""IP2> 0: A356, P - 0: A356, C4'"""
+;;;(............);
+;;;"""Single strand 3 (2D: 311-377; 3D: 0312-0378)""";
+;;;AUGCCAGAACUCACGACUGGCAUCUACGGGGAUGGUGCUCUCCCAAUUCUCCAUUUACCGCCGAAUC;
+;;;..................................................................(;
+;;;;
+E15;L(S);Lasso;"""Loop 3 (2D: 632-639; 3D: 0633-0640)""";"""IP1> 0: G123, P - 0: G123, C4'"""
+;;;UGUUCGCA;
+;;;(......);
+;;;"""Single strand 7 (2D: 98-123; 3D: 099-0124)""";
+;;;AGUGCCUUGUGCCUGCUUCGGCAGGC;
+;;;).........................;
+;;;;
+E16;L(S);Lasso;"""Loop 1 (2D: 657-668; 3D: 0658-0669)""";"""IP1> 0: U708, P - 0: U708, C4'"""
+;;;AUGAUUCGUCAU;
+;;;(..........);
+;;;"""Single strand 2 (2D: 703-719; 3D: 0704-0720)""";
+;;;CGGGUAGAUGGAGAAUU;
+;;;)................;
+;;;;

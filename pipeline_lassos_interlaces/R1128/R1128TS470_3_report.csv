@@ -1,0 +1,8 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;L(D);Lasso;"""Loop 1 (2D: 165-168, 179-182; 3D: 0166-0169, 0180-0183)""";"""IP1> 0: U85, C4' - 0: U86, P"""
+;;;UGGC-GUUG;"""IP2> 0: U86, P - 0: U86, C4'"""
+;;;(..(-)..);
+;;;"""Dinucleotide step 1 (2D: 84-85, 100-101; 3D: 085-086, 0101-0102)""";
+;;;UU-GA;
+;;;((-));
+;;;;
