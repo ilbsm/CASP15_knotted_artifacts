@@ -12,6 +12,7 @@ Required packages: topoly, tqdm\
 `pdb_targets/` -- .pdb files of CASP15 targets.\
 `pipeline_knots/` -- programs used to study knots in RNA.\
 `pipeline_lassos_interlaces/` -- programs used to study lassos and interlaces in RNA.\
+`secondary_structure/` -- script and input files to generate pictures of secondary structures of models from figures 5 and 6.\
 `requirements.txt` -- required packages.
 
 ## Content of `pipeline_knots/`
