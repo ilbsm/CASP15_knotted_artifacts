@@ -1,0 +1,11 @@
+#!/bin/bash
+
+java -cp VARNAv3-93.jar fr.orsay.lri.varna.applications.VARNAcmd -i lasso.txt -algorithm naview -resolution 2.0 -drawBackbone false -bp "#000000" -highlightRegion "1-6:radius=6,fill=#646464,outline=#ffffff;6-32:radius=6,fill=#c70786,outline=#ffffff;32-69:radius=6,fill=#0557a7,outline=#ffffff" -o R1107TS416_2-lasso.svg
+
+java -cp VARNAv3-93.jar fr.orsay.lri.varna.applications.VARNAcmd -i interlaces.txt -algorithm naview -resolution 2.0 -drawBackbone false -bp "#000000" -highlightRegion "142-152:radius=6,fill=#c70786,outline=#ffffff;118-134:radius=6,fill=#c70786,outline=#ffffff;49-61:radius=6,fill=#c70786,outline=#ffffff;293-300:radius=6,fill=#77c303,outline=#ffffff;159-217:radius=6,fill=#77c303,outline=#ffffff;335-346:radius=6,fill=#77c303,outline=#ffffff;1-49:radius=6,fill=#646464,outline=#ffffff;61-118:radius=6,fill=#646464,outline=#ffffff;134-142:radius=6,fill=#646464,outline=#ffffff;152-159:radius=6,fill=#646464,outline=#ffffff;217-293:radius=6,fill=#646464,outline=#ffffff;300-335:radius=6,fill=#646464,outline=#ffffff;346-375:radius=6,fill=#646464,outline=#ffffff" -annotations "L1:anchor=49;L1:anchor=335;L2:anchor=119;L2:anchor=159;L3:anchor=142;L3:anchor=293" -o R1136TS110_4-interlaces.svg
+
+java -cp VARNAv3-93.jar fr.orsay.lri.varna.applications.VARNAcmd -i target.txt -algorithm naview -resolution 2.0 -drawBackbone false -bp "#000000" -highlightRegion "1-180:radius=6,fill=#dda807,outline=#ffffff;180-360:radius=6,fill=#c70786,outline=#ffffff;360-540:radius=6,fill=#055fa7,outline=#ffffff;540-720:radius=6,fill=#77c303,outline=#ffffff" -o R1138-target.svg
+
+java -cp VARNAv3-93.jar fr.orsay.lri.varna.applications.VARNAcmd -i model_nonML.txt -algorithm naview -resolution 2.0 -drawBackbone false -bp "#000000" -highlightRegion "1-180:radius=6,fill=#dda807,outline=#ffffff;180-360:radius=6,fill=#c70786,outline=#ffffff;360-540:radius=6,fill=#055fa7,outline=#ffffff;540-720:radius=6,fill=#77c303,outline=#ffffff" -o R1138TS227_2-nonML.svg
+
+java -cp VARNAv3-93.jar fr.orsay.lri.varna.applications.VARNAcmd -i model_ML.txt  -algorithm naview -resolution 2.0 -drawBackbone false -bp "#000000" -highlightRegion "1-180:radius=6,fill=#dda807,outline=#ffffff;180-360:radius=6,fill=#c70786,outline=#ffffff;360-540:radius=6,fill=#055fa7,outline=#ffffff;540-720:radius=6,fill=#77c303,outline=#ffffff" -o R1138TS054_3-ML.svg
