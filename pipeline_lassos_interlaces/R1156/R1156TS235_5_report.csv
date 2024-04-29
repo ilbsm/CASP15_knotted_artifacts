@@ -1,0 +1,22 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;L(D);Lasso;"""Loop 1 (2D: 31-54; 3D: 032-055)""";"""IP1> 0: A31, B - 0: U56, C4'"""
+;;;CAAUAUACCGUUUCGUCGGGUGCG;"""IP2> 0: G57, C4' - 0: C30, B"""
+;;;[.....)))))..((((((((((];
+;;;"""Dinucleotide step 1 (2D: 29-30, 55-56; 3D: 030-031, 056-057)""";
+;;;CA-UG;
+;;;[[-]];
+;;;;
+E2;L(S);Lasso;"""Loop 1 (2D: 31-54; 3D: 032-055)""";"""IP1> 0: U23, C4' - 0: C24, P"""
+;;;CAAUAUACCGUUUCGUCGGGUGCG;
+;;;[.....)))))..((((((((((];
+;;;"""Single strand 1 (2D: 0-29; 3D: 01-030)""";
+;;;GGAGCAUCGUGUCUCAAGUGCUUCACGGUC;
+;;;.((((.((.((.(((..((((((.((((([;
+;;;;
+E3;L(S);Lasso;"""Loop 1 (2D: 31-54; 3D: 032-055)""";"""IP1> 0: G58, P - 0: G58, C4'"""
+;;;CAAUAUACCGUUUCGUCGGGUGCG;
+;;;[.....)))))..((((((((((];
+;;;"""Single strand 2 (2D: 56-133; 3D: 057-0134)""";
+;;;GGCAAUUCGGUGCACAUCAUGUCUUUCGUGGCUGGUGUGGCUCCUCAAGGUGCGAGGGGCAAGUAUAGAGCAGAGCUC;
+;;;]))).)))))))(((((((.(((......))))))))))(((((((.......))))))))))))).)))))))))));
+;;;;

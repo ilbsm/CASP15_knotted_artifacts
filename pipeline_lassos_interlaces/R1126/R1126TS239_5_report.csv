@@ -1,0 +1,22 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;D(S);Lasso;"""Dinucleotide step 1 (2D: 334-335, 350-351; 3D: 0335-0336, 0351-0352)""";"""IP1> 0: C74, C4' - 0: C75, P"""
+;;;GU-AC;
+;;;((-));
+;;;"""Single strand 1 (2D: 61-75; 3D: 062-076)""";
+;;;GACCUGUAGAUGCCA;
+;;;[[............(;
+;;;;
+E2;D(S.);Lasso;"""Dinucleotide step 2 (2D: 335-336, 349-350; 3D: 0336-0337, 0350-0351)""";"""IP1> 0: G73, C4' - 0: C74, P"""
+;;;UU-AA;"""IP2> 0: C74, P - 0: C74, C4'"""
+;;;((-));
+;;;"""Single strand 1 (2D: 61-75; 3D: 062-076)""";
+;;;GACCUGUAGAUGCCA;
+;;;[[............(;
+;;;;
+E3;D(S);Lasso;"""Dinucleotide step 3 (2D: 336-337, 348-349; 3D: 0337-0338, 0349-0350)""";"""IP1> 0: G73, P - 0: G73, C4'"""
+;;;UA-UA;
+;;;((-));
+;;;"""Single strand 1 (2D: 61-75; 3D: 062-076)""";
+;;;GACCUGUAGAUGCCA;
+;;;[[............(;
+;;;;

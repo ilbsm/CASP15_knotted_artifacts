@@ -1,0 +1,8 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;D&L;Interlace;"""Dinucleotide step 1 (2D: 374-375, 401-402; 3D: 0375-0376, 0402-0403)""";"""IP1> 0: A433, C4' - 0: U434, P"""
+;;;AA-UU;"""IP2> 0: U403, P - 0: U403, C4'"""
+;;;((-));
+;;;"""Loop 1 (2D: 410-414, 430-434; 3D: 0411-0415, 0431-0435)""";
+;;;CAUAG-UUAUG;
+;;;(...(-)...);
+;;;;

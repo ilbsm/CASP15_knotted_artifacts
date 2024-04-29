@@ -1,0 +1,15 @@
+;Class;Topology;Entangled elements;Intersection points
+E1;D&D;Interlace;"""Dinucleotide step 1 (2D: 71-72, 86-87; 3D: 072-073, 087-088)""";"""IP1> 0: U4, P - 0: U4, C4'"""
+;;;GC-GC;"""IP2> 0: C88, P - 0: C88, C4'"""
+;;;((-));
+;;;"""Dinucleotide step 2 (2D: 2-3, 370-371; 3D: 03-04, 0371-0372)""";
+;;;AU-AU;
+;;;((-));
+;;;;
+E2;L&L;Interlace;"""Loop 1 (2D: 337-342; 3D: 0338-0343)""";"""IP1> 0: G34, P - 0: G34, C4'"""
+;;;GUUCGC;"""IP2> 0: G342, C4' - 0: C343, P"""
+;;;(....);
+;;;"""Loop 2 (2D: 27-36; 3D: 028-037)""";
+;;;CUCUUCGGAG;
+;;;(........);
+;;;;
