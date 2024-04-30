@@ -22,6 +22,6 @@ Required packages: topoly, tqdm\
 `knots_to_verify.txt` -- list of RNAs with knots after probabilistic closure or TTCs.
 
 ## Content of `pipeline_lassos_interlaces/`
-`1_normalize_csv.py` -- .\
-`2_analyze_depth.py` -- .\
-`R*/*_report.csv` -- .
+`1_normalize_csv.py` -- (prosze o komentarz tutaj).\
+`2_analyze_depth.py` -- (prosze o komentarz tutaj).\
+`R*/*_report.csv` -- (prosze o komentarz tutaj).
