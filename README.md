@@ -22,6 +22,12 @@ Required packages: topoly, tqdm\
 `knots_to_verify.txt` -- list of RNAs with knots after probabilistic closure or TTCs.
 
 ## Content of `pipeline_lassos_interlaces/`
-`1_normalize_csv.py` -- (prosze o komentarz tutaj).\
-`2_analyze_depth.py` -- (prosze o komentarz tutaj).\
-`R*/*_report.csv` -- (prosze o komentarz tutaj).
+
+Identification and classification of entanglements of structural elements of 3D RNA models:\
+`R*/*_report.csv` -- entanglement identification and classification results obtained using RNAspider.\
+`casp15-entanglements-summary.xlsx` -- a comprehensive analysis of entanglements identified.
+
+Lasso depth analysis:\
+`1_normalize_csv.py` -- a script normalizing CSV files.\
+`2_analyze_depth.py` -- a script preparing lasso depth analysis summary.\
+`lasso-depth-analysis.xlsx` -- the resultant summary.
