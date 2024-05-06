@@ -23,6 +23,9 @@ Required packages: topoly, tqdm\
 
 ## Content of `pipeline_lassos_interlaces/`
 
+Pre-processing of 3D models:\
+`clear-casp-headers.awk` -- remove CASP-specific headers.
+
 Identification and classification of entanglements of structural elements of 3D RNA models:\
 `R*/*_report.csv` -- entanglement identification and classification results obtained using RNAspider.\
 `casp15-entanglements-summary.xlsx` -- a comprehensive analysis of entanglements identified.
